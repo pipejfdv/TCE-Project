@@ -52,6 +52,7 @@ nav > a{
     margin-right: 10px;
 }
 
+
 nav > a:hover{
     text-decoration: underline;
 }
@@ -62,6 +63,12 @@ header img{
     border: 3px solid white;
     border-radius: 50%;
     display: block;
+    float:left;
+    left: 10px;
+    right: 30px;
+    position: relative;
+    left: 100px;
+    right: 10px;
 }
 header .textos-header{
     display: flex;
