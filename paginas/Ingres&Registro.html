@@ -11,25 +11,33 @@
     </head>
 
     <body>
+        <header>
+            <div>
+                <nav class="nav-Ing&Reg">
+                    <a href="#">Inicio</a>
+                    <a href="#">¿Quienes somos?</a>
+                    <a href="#">Nuestros servivios</a>
+                    <a href="#">Contactenos</a>
+                    <a href="#">Ingresar</a>
+                </nav>
+            </div>
+        </header>
         <main>
-            <div>    
+            <div class="Bloque Inicio">    
                 <form action="base_de_datos">
                     <ul>
-                        <li>
-                            <label for="Usuario">Usuario o Correo:</label>
-                            <input type="text" id="name" name="user_name" placeholder="Usuario">
-                        </li>
-                        <li>
-                            <label for="contraseña">Contraseña</label>
-                            <input type="contraseña" placeholder="Contraseña"></input>
-                        </li>
-                        <li>
-                            <button type="submit" >Ingresar</button>
+                        <div class="inputContainer">
+                            <label>Usuario o Correo:</label>
+                            <input type="text" placeholder="Usuario" required>
+                        </div>
+                        <div class="inputContainer">
+                            <label>Contraseña</label>
+                            <input type="contraseña" placeholder="Contraseña" required></input>
+                        </div>
+                        <div class="inputContainer">
+                            <button type="submit" href="../Index.html">Ingresar</button>
                             <button type="submit" href="#">Registrarme</button>
-                        </li>
-                        <li>
-                            
-                        </li>
+                        </div>                        
                     </ul>
                 </form>
             </div>
@@ -45,7 +53,7 @@
                     <p>usanbuenaventura@academia.usbbog.edu.co</p>
                 </div>
             </div>
-            <h2 class="titulo-final">&copy; ProyectTCE <br>| Juan Felipe Delgadillo <br>| Andres Felipe Castellanos <br>| Luz Adriana Moreno</h2>
+            <h2 class="titulo-final">&copy; ProyectTCE <br>| Juan Felipe Delgadillo |<br>| Andres Felipe Castellanos |<br>| Luz Adriana Moreno |</h2>
         </footer>    
 
 
