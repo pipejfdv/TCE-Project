@@ -1,0 +1,207 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* texto de los formularios */
+label{
+    font-size: 14;
+}
+/* Enlaces */
+nav > a{
+    color:#000000;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+}
+/* contenedor del navegador */
+.navegador{
+    position: absolute;
+    height: 40px;
+    left: 450px;
+    width: auto;
+    background: rgb(240, 233, 230);
+    border-radius: 5px;
+    z-index: 10;
+
+}
+/* Contenedor principal, contiene imagen de fondo*/
+.Contenedor_Registro{
+    height: 100%;
+    width: 100%;
+    background-image: url(../Styles/FondoRegistro.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    
+}
+/* bloque donde se muestra la incormación  */
+.bloque_formulario{
+    width: 370px;
+    height: 455px;
+    position: relative;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    background: rgb(240, 233, 230);
+    padding: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+/* contiene los botones */
+.boton_formulario{
+    width: 240px;
+    margin: 30px auto;
+    margin: 20px auto 30px auto;
+    position: relative;
+}
+/* boton de ingreso */
+.desliz-btn1{
+    
+    padding: 10px 22px;
+    cursor: pointer;
+    background: transparent;
+    border: 0px;
+    outline: none;
+    position: relative;
+}
+/* boton de registro */
+.desliz-btn2{
+    padding: 10px 35px;
+    cursor: pointer;
+    background: transparent;
+    border: 0px;
+    outline: none;
+    position: relative;
+}
+/* estilo y transición de los botones */
+#elegir{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to right, rgb(66, 196, 152), rgb(92, 159, 226));
+    border-radius: 30px;
+    transition: 0.8s;
+}
+/* formulario para ingreso usuario y contraseña */
+.formulario{
+    top: 100px;
+    position: absolute;
+    width: 280px;
+    transition: 0.8s;
+}
+/* imagen de logo */
+form img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid white;
+    border-radius: 50%;
+    display: block;
+    left: 10px;
+    right: 30px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* input de los datos */
+.Users{
+    width: 100%;
+    padding: 10px 0 5px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    outline: none;
+    background: transparent;
+}
+/* marcación de recordar contraseña */
+.check{
+    margin: 30px 10px 30px 0;
+}
+/* texto del primer check */
+.check_L1{
+    color: #000000;
+    font-size: 12px;
+    bottom: 64px;
+    position: absolute;
+}
+/* texto del segundo check */
+.check_L2{
+    color: #000000;
+    font-size: 12px;
+    bottom: 64px;
+    position: absolute;
+    left: 30PX;
+}
+
+/* Estilo de boton y envio de formulario */
+.validar{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, rgb(66, 196, 152), rgb(92, 159, 226));
+    border: 0px;
+    outline: none;
+    border-radius: 30px;
+}
+/* identificación del primer formulario llamado login */
+#Login{
+    left: 50px;
+}
+/* identificación del segundo formulario llamado registro */
+#Registrarme{
+    left: 450px;
+    top: 70px;
+}
+
+
+/* ----------------------------- Footer ----------------------------*/
+footer{
+    background: #1f1f1f;
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+    position: absolute;
+    top:100%;
+    width: 100%;
+}
+
+.Contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid white;
+    
+}
+
+.contenido-footer{
+    text-align: center;
+}
+.contenido-footer h4{
+    color: white;
+    border-bottom: 3px solid #318B48;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.contenido-footer h4{
+    color: #ccc; 
+}
+
+.contenido-footer p{
+    color: gray; 
+}
+.titulo-final{
+    text-align: center;
+    font-size: 15px;
+    margin: 20px 0 0 0;
+    color: #9e9797;
+}
