@@ -1,4 +1,13 @@
-<HTml lang="en">
+<!-- Conexion base de datos PHP -->
+<?php
+$enlace = mysqli_connect("localhost","root","","tce");
+if(!$enlace){
+    die("Conexion no exitosa en base de datos". mysqli_error());
+}
+echo "conxion exitosa";
+mysqli_close($enlace);
+?>
+<HTml lang="es">
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="./Styles/Estilos.css">
@@ -6,6 +15,9 @@
     </head>
 
     <body>
+        
+
+
         <header class="header">
        
             <div class="header_Logo">
