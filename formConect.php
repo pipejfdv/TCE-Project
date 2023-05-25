@@ -5,20 +5,37 @@
             die("Conexion no exitosa en base de datos". mysqli_error());
         }
         echo "conxion exitosa";
-        mysqli_close($enlace);
+        
+// función del boton de registro
 
-// crear variables que ingresan a la base de datos
-$name = $_POST['nombre'];
-$lastname = $_POST['apellido'];
-$date = $_POST['fecha'];
-$restartDate = date('d, F, Y', strtotime($date));
-$typeSex = $_POST['genero'];
-$email = $_POST['email'];
-$passw = $_POST['Contrasena'];
+if(isset($_POST['registrarse'])){
+    // crear variables que ingresan a la base de datos
+    echo "ejecutando codigo";
+    var_dump($name);
+    $name = $_POST['nombre'];
+    $lastname = $_POST['apellido'];
+    $date = $_POST['fecha'];
+    $restartDate = date('Y-m-d', strtotime($date));
+    $typeSex = $_POST['genero'];
+    $email = $_POST['email'];
+    $passw = $_POST['Contrasena'];
+    $rol = $_POST['rol'];
 
-// consulta SQL para inseción de dato
+    // consulta SQL para inseción de dato
 
-$sql = INSERT into usuarios (nombre, apellido, fecha_nacimiento, genero, correo, contrasena, rol) values ('$name','$lastname', '$restartDate','$typeSex', '$email','$passw');
+    $insertDB = "INSERT INTO usuarios () 
+    values ('$name','$lastname', '$restartDate','$typeSex', '$email','$passw', '$rol')";
 
-$enlace.close();
+    // envio de datos
+    $insertar = mysqli_query($enlace, $insertDB);
+
+    // comprobar
+
+    if(!$insertar){
+        echo "Error en la linea: ".mysqli_error($enlace);;
+    }
+    var_dump($name);
+}
+
+mysqli_close($enlace);
 ?>
