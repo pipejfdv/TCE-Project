@@ -15,15 +15,18 @@ nav > a{
     margin-right: 10px;
 }
 /* contenedor del navegador */
+
 .navegador{
     position: absolute;
+    margin-left: auto;
+    margin-right: auto;
     height: 40px;
-    left: 450px;
+    left: 32%;
     width: auto;
     background: rgb(240, 233, 230);
     border-radius: 5px;
     z-index: 10;
-
+    
 }
 /* Contenedor principal, contiene imagen de fondo*/
 .Contenedor_Registro{

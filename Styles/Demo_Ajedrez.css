@@ -1,0 +1,31 @@
+/*cuerpo del html*/
+body{
+    padding: 0;
+    margin: 0;
+    background: rgb(656,000,111);
+} 
+.tablero{
+    width: 400px;
+    height: 400px;
+    
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 0;
+}
+
+.fondo_Ajedrez{
+    position: absolute;
+    z-index: 0;
+}
+
+#tablero_Ajedrez{
+    position: relative;
+    z-index: 1;
+}
+.tablero Canvas{
+    margin-left: 40px;
+    margin-top: 40px;
+}
