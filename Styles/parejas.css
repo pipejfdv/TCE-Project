@@ -62,9 +62,9 @@ body {
     opacity: 1;
     pointer-events: all;
 }
-/* /imagenes/cartas/reverso.jpg) */
+
 .carta.abajo {
-    background: url(../imagenes/juegos/parejas/cartas/reverso.jpg) repeat center center;
+    background: url(../imagenes/juegos/parejas/cartas/reverso.png) repeat center center;
     background-size: contain;
 }
 
@@ -158,6 +158,7 @@ body {
 
 .img-simpson {
     height: 100%;
+    width: 100%; 
     object-fit: cover;
     object-position: center center;
     opacity: 0;

@@ -57,9 +57,9 @@ window.onload = function () {
       carta.setAttribute("class", "carta abajo");
       contenedor.appendChild(carta);
       carta.innerHTML =
-        "<img class='img-simpson' src='./imagenes/cartas/" +
-        numerosCartas[key] +
-        ".png'/>";
+      "<img class='img-simpson' src='../imagenes/juegos/parejas/cartas/" +
+      numerosCartas[key] +
+       ".png'/>";
     });
     cartasArray = document.getElementsByClassName("carta");
 
