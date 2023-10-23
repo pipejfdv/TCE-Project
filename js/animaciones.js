@@ -1,6 +1,7 @@
 //Solo animaciones de la pagina
 //se parar las animaciónes por -- 
 
+alert("hola");
 //---------Animaciones pagina de registro--------//
 function Login(){
     x.style.left="50px";
@@ -32,4 +33,3 @@ function LoginUsuario(){
     elementoDinamico("login.jsp", document.getElementById("control2"));
 }
 
-alert("hola");
