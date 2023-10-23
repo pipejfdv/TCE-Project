@@ -31,3 +31,5 @@ function IngresosUsuario() {
 function LoginUsuario(){
     elementoDinamico("login.jsp", document.getElementById("control2"));
 }
+
+alert("hola");
