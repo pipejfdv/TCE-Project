@@ -45,23 +45,8 @@ body{
     margin-top: 10px;
 }
 
-nav{
-    display: flex;
-    text-align: right;
-    padding: 10px 50px 0 30%;
-}
-
-nav > a{
-    color:#000000;
-    font-weight: 300;
-    text-decoration: none;
-    margin-right: 10px;
-}
 
 
-nav > a:hover{
-    text-decoration: underline;
-}
 header img{
     width: 100px;
     height: 100px;
