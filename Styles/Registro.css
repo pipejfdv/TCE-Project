@@ -159,7 +159,11 @@ form img{
 #Login{
     left: 50px;
 }
-
+/* identificación del segundo formulario llamado registro */
+#Registrarme{
+    left: 450px;
+    
+}
 
 
 /* ----------------------------- Footer ----------------------------*/
