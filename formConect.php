@@ -1,23 +1,30 @@
 <?php
-$enlace = mysqli_connect("localhost", "root", "", "funnymind");
+// Establecer la conexión a la base de datos
+$host = "localhost";
+$usuario = "root";
+$contrasena = " ";
+$base_de_datos = "funnymind";
+
+$enlace = mysqli_connect($host, $usuario, $contrasena, $base_de_datos);
 
 if (!$enlace) {
-    die("Conexión no exitosa en la base de datos" . mysqli_error($enlace));
+    die("Conexión no exitosa en la base de datos: " . mysqli_connect_error());
 }
 
 echo "Conexión exitosa";
 
-// Crear variables que reciben datos del formulario
-$nombre = $_POST['nombre'];
-$apellido = $_POST['apellido'];
-$fecha = $_POST['fecha'];
-$fechaNacimiento = date('Y-m-d', strtotime($fecha)); 
-$genero = $_POST['genero'];
-$correo = $_POST['email'];
-$contrasena = $_POST['Contrasena'];
+// Obtener datos del formulario
+$nombre = mysqli_real_escape_string($enlace, $_POST['nombre']);
+$apellido = mysqli_real_escape_string($enlace, $_POST['apellido']);
+$fecha = mysqli_real_escape_string($enlace, $_POST['fecha']);
+$fechaNacimiento = date('Y-m-d', strtotime($fecha));
+$genero = mysqli_real_escape_string($enlace, $_POST['genero']);
+$correo = mysqli_real_escape_string($enlace, $_POST['email']);
+$contrasena = mysqli_real_escape_string($enlace, $_POST['Contrasena']);
+$rol = "usuario";  // Asignar un valor para el rol
 
 // Consulta SQL para la inserción de datos
-$sql = "INSERT INTO usuarios (nombre, apellido, fecha_nacimiento, genero, correo, contrasena, rol) VALUES ('$nombre', '$apellido', '$fechaNacimiento', '$genero', '$correo', '$contrasena', 'usuario')";
+$sql = "INSERT INTO usuarios (nombre, apellido, fecha_nacimiento, genero, correo, contrasena, rol) VALUES ('$nombre', '$apellido', '$fechaNacimiento', '$genero', '$correo', '$contrasena', '$rol')";
 
 if (mysqli_query($enlace, $sql)) {
     echo "Registro insertado exitosamente";
@@ -25,5 +32,7 @@ if (mysqli_query($enlace, $sql)) {
     echo "Error al insertar registro: " . mysqli_error($enlace);
 }
 
+// Cerrar la conexión a la base de datos
 mysqli_close($enlace);
 ?>
+
