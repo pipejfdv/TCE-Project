@@ -95,7 +95,7 @@ nav > a{
 }
 /* formulario para ingreso usuario y contraseña */
 .formulario{
-    position: relative;
+    position: absolute;
     width: 280px;
     transition: 0.8s;
 }
@@ -159,11 +159,7 @@ form img{
 #Login{
     left: 50px;
 }
-/* identificación del segundo formulario llamado registro */
-#Registrarme{
-    left: 450px;
-    top: 70px;
-}
+
 
 
 /* ----------------------------- Footer ----------------------------*/
