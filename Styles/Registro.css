@@ -38,16 +38,21 @@ nav > a{
     position: absolute;
     
 }
+/* contenedor de formularios */
+.conten_Form{
+    position: absolute;
+   
+}
 /* bloque donde se muestra la incormación  */
 .bloque_formulario{
     width: 370px;
-    height: 455px;
+    height: 75%;
     position: relative;
     margin-top: 100px;
     margin-right: auto;
     margin-left: auto;
     background: rgb(240, 233, 230);
-    padding: 5px;
+    
     border-radius: 10px;
     overflow: hidden;
 }
@@ -55,7 +60,7 @@ nav > a{
 .boton_formulario{
     width: 240px;
     margin: 30px auto;
-    margin: 20px auto 30px auto;
+    /* margin: 20px auto 30px auto; */
     position: relative;
 }
 /* boton de ingreso */
@@ -70,7 +75,7 @@ nav > a{
 }
 /* boton de registro */
 .desliz-btn2{
-    padding: 10px 35px;
+    padding: 10px 22px;
     cursor: pointer;
     background: transparent;
     border: 0px;
@@ -90,8 +95,7 @@ nav > a{
 }
 /* formulario para ingreso usuario y contraseña */
 .formulario{
-    top: 100px;
-    position: absolute;
+    position: relative;
     width: 280px;
     transition: 0.8s;
 }
@@ -100,11 +104,9 @@ form img{
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border: 3px solid white;
+    border: 3px solid rgb(80, 122, 238);
     border-radius: 50%;
     display: block;
-    left: 10px;
-    right: 30px;
     position: relative;
     margin-left: auto;
     margin-right: auto;

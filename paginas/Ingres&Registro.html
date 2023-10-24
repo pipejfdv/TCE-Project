@@ -46,47 +46,48 @@
 
         </header>
         <main>
-            <div class="Contenedor_Registro">
-                <div class="bloque_formulario">
+            <div class="Contenedor_Registro ">
+                <div class="bloque_formulario ">
                     <div class="boton_formulario">
                         <div id="elegir"></div>
                         <button type="button" class="desliz-btn1"  onclick="Login()" id="control1">Ingresar</button>
                         <button type="button" class="desliz-btn2" onclick="Registrarme()" id="control2">Registrarme</button>
                     </div>
-                    
-                    <form action="../formConect.php" method="POST" class="formulario" id="Login">
-                        <div class="Logo">
-                            <img id="Icono" src="../imagenes/Logo.PNG" width="80" height="80" y="10"/>
-                        </div>
-                        <input type="text" name="usuarioNick" placeholder="Usuario o Correo" class="Users" required>
-                        <input type="password" name="contrasenaU" placeholder="Contraseña" class="Users" required>
-                        <input type="checkbox" class="check">
-                        <label class="check_L1">Recordar contraseña</label>
-                        <button type="submit" class="validar">Acceder</button>
-                    </form>
-                    <form action="../formConect.php" method="post" class="formulario" id="Registrarme">
-                        <input type="text" name="nombre" placeholder="Nombres" class="Users" required>
-                        <input type="text" name="apellido" placeholder="Apellidos" class="Users" required>
-                        <input type="date" name="fecha" placeholder="Fecha nacimiento" class="Users" required>
-                        <label>Genero</label>
-                        <select name="genero">
-                            <option value="H">H</option>
-                            <option>M</option>
-                        </select>
-                        <input type="email" name="email" placeholder="Correo" class="Users" required>
-                        <input type="password" name="Contrasena" placeholder="Asignar contraseña" class="Users" required>
-                        <label>Paciente o Terapeuta</label>
-                        <select name="rol">
-                            <option value="Paciente">Paciente</option>
-                            <option value="Medico">Medico</option>
-                        </select>
-                        
-                        <label class="check_L2">Acepto los terminos y Condiciones.</label>
-                        <div class="TyC">
-                            <input type="checkbox" class="check">
-                        </div>
-                        <button type="submit" name="registrarse" class="validar">Registrar</button>
-                    </form>
+                    <div class="conten_Form">
+                      <form action="../formConect.php" method="POST" class="formulario" id="Login">
+                          <div class="Logo">
+                              <img id="Icono" src="../imagenes/Logo.PNG" width="80" height="80" y="10"/>
+                          </div>
+                          <input type="text" name="usuarioNick" placeholder="Usuario o Correo" class="Users" required>
+                          <input type="password" name="contrasenaU" placeholder="Contraseña" class="Users" required>
+                          <input type="checkbox" class="check">
+                          <label class="check_L1">Recordar contraseña</label>
+                          <button type="submit" class="validar">Acceder</button>
+                      </form>
+                      <form action="../formConect.php" method="post" class="formulario" id="Registrarme">
+                          <input type="text" name="nombre" placeholder="Nombres" class="Users" required>
+                          <input type="text" name="apellido" placeholder="Apellidos" class="Users" required>
+                          <input type="date" name="fecha" placeholder="Fecha nacimiento" class="Users" required>
+                          <label>Genero</label>
+                          <select name="genero">
+                              <option value="H">H</option>
+                              <option>M</option>
+                          </select>
+                          <input type="email" name="email" placeholder="Correo" class="Users" required>
+                          <input type="password" name="Contrasena" placeholder="Asignar contraseña" class="Users" required>
+                          <label>Paciente o Terapeuta</label>
+                          <select name="rol">
+                              <option value="Paciente">Paciente</option>
+                              <option value="Medico">Medico</option>
+                          </select>
+                          
+                          <label class="check_L2">Acepto los terminos y Condiciones.</label>
+                          <div class="TyC">
+                              <input type="checkbox" class="check">
+                          </div>
+                          <button type="submit" name="registrarse" class="validar">Registrar</button>
+                      </form>
+                    </div>
                 </div>      
             </div>
         </main>
