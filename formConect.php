@@ -21,11 +21,6 @@ $correo = $_POST['email'];
 $contrasena = $_POST['Contrasena'];
 $rol = $_POST['rol'];
 
-if ($rol != 'Administrador' && $rol != 'Terapeuta' && $rol != 'Paciente') {
-    // Valor de rol no válido, asignar un valor predeterminado
-    $rol = 'Paciente';
-}
-
 // Consulta SQL para la inserción de datos
 $sql = "INSERT INTO usuarios (nombre, apellido, fecha_nacimiento, genero, correo, contrasena, rol) VALUES ('$nombre', '$apellido', '$fechaNacimiento', '$genero', '$correo', '$contrasena', '$rol')";
 
