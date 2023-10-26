@@ -12,24 +12,31 @@ if (!$enlace) {
 }
 
 // Obtener datos del formulario
-$nombre = $_POST['nombre'];
-$apellido = $_POST['apellido'];
+$nombre = mysqli_real_escape_string($enlace, $_POST['nombre']);
+$apellido = mysqli_real_escape_string($enlace, $_POST['apellido']);
 $fecha = $_POST['fecha'];
 $fechaNacimiento = date('Y-m-d', strtotime($fecha)); 
-$genero = $_POST['genero'];
-$correo = $_POST['email'];
+$genero = mysqli_real_escape_string($enlace, $_POST['genero']);
+$correo = mysqli_real_escape_string($enlace, $_POST['email']);
 $contrasena = $_POST['Contrasena'];
-$rol = $_POST['rol'];
+$rol = mysqli_real_escape_string($enlace, $_POST['rol']);
+
+// Hashear la contraseña
+$passhash = password_hash($contrasena, PASSWORD_BCRYPT);
 
 // Consulta SQL para la inserción de datos
-$sql = "INSERT INTO usuarios (nombre, apellido, fecha_nacimiento, genero, correo, contrasena, rol) VALUES ('$nombre', '$apellido', '$fechaNacimiento', '$genero', '$correo', '$contrasena', '$rol')";
+$sql = "INSERT INTO usuarios (nombre, apellido, fecha_nacimiento, genero, correo, contrasena, rol) VALUES ('$nombre', '$apellido', '$fechaNacimiento', '$genero', '$correo', '$passhash', '$rol')";
 
-if ($enlace->query($sql) === TRUE) {
+if (mysqli_query($enlace, $sql)) {
     echo "Datos insertados correctamente";
 } else {
-    echo "Error al insertar datos: " . $enlace->error;
+    echo "Error al insertar datos: " . mysqli_error($enlace);
 }
+
 // Cerrar la conexión a la base de datos
 mysqli_close($enlace);
 ?>
+
+
+
 
