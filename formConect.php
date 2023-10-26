@@ -25,7 +25,7 @@ $rol = mysqli_real_escape_string($enlace, $_POST['rol']);
 $passhash = password_hash($contrasena, PASSWORD_BCRYPT);
 
 // Consulta SQL para la inserción de datos
-$sql = "INSERT INTO usuarios (nombre, apellido, fecha_nacimiento, genero, correo, contrasena, rol) VALUES ('$nombre', '$apellido', '$fechaNacimiento', '$genero', '$correo', '$passhash', '$rol')";
+$sql = "CALL InsertarUsuarios ('$nombre', '$apellido', '$fechaNacimiento', '$genero', '$correo', '$passhash', '$rol')";
 
 if (mysqli_query($enlace, $sql)) {
     echo "Datos insertados correctamente";
