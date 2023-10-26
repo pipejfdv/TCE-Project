@@ -17,4 +17,3 @@ function Registrarme(){
 var x = document.getElementById('Login');
 var y = document.getElementById('Registrarme');
 var z = document.getElementById('elegir');
-

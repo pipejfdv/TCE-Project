@@ -33,6 +33,8 @@ if (mysqli_query($enlace, $sql)) {
     echo "Error al insertar datos: " . mysqli_error($enlace);
 }
 
+header("Location: paginas/Ingres&Registro.html");
+
 // Cerrar la conexión a la base de datos
 mysqli_close($enlace);
 ?>
