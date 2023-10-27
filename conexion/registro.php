@@ -23,7 +23,5 @@ if ($enlace->query($sql) === TRUE) {
     echo "Error al insertar datos: " . mysqli_error($enlace);
 }
 
-// No es necesario cerrar la conexión aquí si deseas usarla más adelante.
-
 header("Location: ../paginas/Ingres&Registro.html");
 ?>
