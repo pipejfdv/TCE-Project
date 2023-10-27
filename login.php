@@ -1,36 +1,42 @@
 <?php
-$host = "localhost";
-$usuario = "root";
-$contrasena = "";
-$base_de_datos = "tce";
+require('formConect.php');
 
-$enlace = mysqli_connect($host, $usuario, $contrasena, $base_de_datos);
+if (isset($_POST['login'])) {
+    // Se obtienen los datos enviados al formulario
+    $usuario_login = mysqli_real_escape_string($enlace, $_POST['usuario']);
+    $contrasena_login = $_POST['contrasena'];
 
-if (!$enlace) {
-    die("Conexión no exitosa en la base de datos: " . mysqli_connect_error());
-}
+    // Se genera la consulta a la base de datos
+    $sql_login = "SELECT contrasena FROM usuarios WHERE correo = '$usuario_login'";
+    $resultado = mysqli_query($enlace, $sql_login);
 
-$correo_login = mysqli_real_escape_string($enlace, $_POST['email']);
-$contrasena_login = $_POST['Contrasena'];
-
-$sql_login = "SELECT * FROM usuarios WHERE correo = '$correo_login'";
-$sql_login = "SELECT * FROM usuarios WHERE contrasena = '$contrasena_login'";
-
-
-$resultado_login = mysqli_query($enlace, $sql_login);
-
-if (mysqli_num_rows($resultado_login) == 1) {
-    $fila = mysqli_fetch_assoc($resultado_login);
-    if (password_verify($contrasena_login, $fila['contrasena'])) {
-        echo "Inicio de sesión exitoso";
-        header("Location: Index.html");
-        exit;
+    if ($resultado) {
+        if ($fila = mysqli_fetch_assoc($resultado)) {
+            $contrasena_encriptada = $fila['contrasena'];
+    
+            // Comparamos la contraseña ingresada con la contraseña encriptada en la base de datos
+            if (password_verify($contrasena_login, $contrasena_encriptada)) {
+                // Consulta para obtener el nombre de usuario
+                $sql_get_username = "SELECT nombre FROM usuarios WHERE correo = '$usuario_login'";
+                $resultado_username = mysqli_query($enlace, $sql_get_username);
+    
+                if ($fila_username = mysqli_fetch_assoc($resultado_username)) {
+                    $nombre_usuario = $fila_username['nombre'];
+    
+                    // Ahora tienes el nombre de usuario, puedes mostrarlo en el HTML
+                }
+    
+                // Redirige a la página de ingreso
+                header("Location: paginas/ingreso.php");
+            } else {
+                echo 'Credenciales Incorrectas';
+            }
+        } else {
+            echo "Usuario no encontrado";
+        }
     } else {
-        echo "Contraseña incorrecta";
+        echo "Error: " . $sql_login . "<br>" . mysqli_error($enlace);
     }
-} else {
-    echo "Usuario no encontrado";
+    
 }
-
-mysqli_close($enlace);
 ?>
