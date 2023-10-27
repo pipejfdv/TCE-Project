@@ -27,7 +27,7 @@ $passhash = password_hash($contrasena, PASSWORD_BCRYPT);
 // Consulta SQL para la inserción de datos
 $sql = "CALL InsertarUsuarios ('$nombre', '$apellido', '$fechaNacimiento', '$genero', '$correo', '$passhash', '$rol')";
 
-if (mysqli_query($enlace, $sql)) {
+if ($enlace->query($sql) === TRUE) {
     echo "Datos insertados correctamente";
 } else {
     echo "Error al insertar datos: " . mysqli_error($enlace);
