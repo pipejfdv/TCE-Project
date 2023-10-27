@@ -1,0 +1,18 @@
+/*procedimiento almacenado para ingreso de datos*/
+create database tce;
+use tce;
+
+DELIMITER $$
+CREATE or REPLACE PROCEDURE InsertarUsuarios (
+	p_nombre varchar (50),
+    p_apellido varchar (50),
+    p_fecha date,
+    p_genero enum ('Masculino', 'Femenino'),
+    p_correo varchar (100),
+    p_contrsena varchar (20),
+    p_rol enum ('Administrador', 'Terapeura', 'Paciente')
+)
+BEGIN
+INSERT INTO usuarios (nombre, apellido, fecha_nacimiento, genero, correo, contrasena, rol)
+VALUES (p_nombre, p_apellido, p_fecha, p_genero, p_correo, p_rol);
+END
