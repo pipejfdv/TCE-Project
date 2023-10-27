@@ -1,5 +1,5 @@
 <?php
-require('formConect.php');
+require('../formConect.php');
 
 if (isset($_POST['login'])) {
     // Se obtienen los datos enviados al formulario
@@ -27,15 +27,15 @@ if (isset($_POST['login'])) {
                 }
     
                 // Redirige a la página de ingreso
-                header("Location: paginas/ingreso.php");
+                header("Location: ../paginas/ingreso.php");
             } else {
-                echo 'Credenciales Incorrectas';
+                echo '<div class="alert alert-danger">Credenciales Incorrectas</div>';
             }
         } else {
-            echo "Usuario no encontrado";
+            echo '<div class="alert alert-danger">Usuario no Encontrado</div>';
         }
     } else {
-        echo "Error: " . $sql_login . "<br>" . mysqli_error($enlace);
+        echo 'div class="alert alert-danger">Error: " . $sql_login . "<br>" . mysqli_error($enlace);</div>';
     }
     
 }

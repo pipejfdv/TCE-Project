@@ -1,5 +1,5 @@
 <?php
-require('formConect.php');
+require('../formConect.php');
 
 // Obtener datos del formulario
 $nombre = mysqli_real_escape_string($enlace, $_POST['nombre']);
@@ -25,5 +25,5 @@ if ($enlace->query($sql) === TRUE) {
 
 // No es necesario cerrar la conexión aquí si deseas usarla más adelante.
 
-header("Location: paginas/Ingres&Registro.html");
+header("Location: ../paginas/Ingres&Registro.html");
 ?>
