@@ -33,6 +33,7 @@ window.onload = function () {
     document.getElementById("detener").removeAttribute("disabled", "");
     valCarta1 = 0;
     iniciarJuego();
+    impresionCronometro.innerHTML = "00:00:00"; // Restablecer la visualización del temporizador
   });
 
   var contenedor = document.getElementById("tablero");
@@ -57,9 +58,9 @@ window.onload = function () {
       carta.setAttribute("class", "carta abajo");
       contenedor.appendChild(carta);
       carta.innerHTML =
-      "<img class='img-simpson' src='../imagenes/juegos/parejas/cartas/" +
-      numerosCartas[key] +
-       ".png'/>";
+        "<img class='img-simpson' src='../imagenes/juegos/parejas/cartas/" +
+        numerosCartas[key] +
+        ".png'/>";
     });
     cartasArray = document.getElementsByClassName("carta");
 
@@ -76,11 +77,10 @@ window.onload = function () {
     Object.keys(cartasArray).forEach(function (key) {
       cartasArray[key].classList.add("iniciado");
     });
-    
-    // Agregar el tiempo aquí
+
     var horas = 0,
-      minutos = 1,
-      segundos = 60;
+      minutos = 0,
+      segundos = 0;
 
     tiempo = setInterval(function () {
       if (horas == 0 && minutos == 0 && segundos == 0) {
@@ -140,14 +140,12 @@ window.onload = function () {
         valCarta1 = 0;
 
         if (aciertos == 0) {
-          // Llamamos a ganaste si todos los aciertos se han completado
           ganaste();
         }
       } else {
         setTimeout(function () {
           carta1.querySelector("img").classList.remove("activo");
           carta2.querySelector("img").classList.remove("activo");
-          console.log();
           carta1.classList.remove("deshabilitar");
           carta2.classList.remove("deshabilitar");
           valCarta1 = 0;
@@ -157,7 +155,6 @@ window.onload = function () {
     }
   }
 
-  // Función para mostrar el mensaje "ganaste"
   function ganaste() {
     clearInterval(tiempo);
     document.getElementById("ganaste").classList.add("activo");
