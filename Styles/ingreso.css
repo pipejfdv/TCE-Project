@@ -1,191 +1,67 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap");
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+*{
   margin: 0;
   padding: 0;
 }
-
-:root {
-  --main-color: #685cfe;
-  --main-transition: 0.5s all ease-in-out;
-}
-
-body {
-  background-color: white;
-}
-::selection {
-  color: white;
-  background: var(--main-color);
-}
-
-.sidebar {
+/* estilo y transición de los botones */
+#elegir{
+  top: 0;
+  left: 0;
+  position: absolute;
   width: 100px;
-  background-color: aqua;
-  padding: 20px;
-  position: fixed;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
   height: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  overflow: hidden;
-  transition: var(--main-transition);
+  background: linear-gradient(to right, rgb(66, 196, 152), rgb(92, 159, 226));
+  border-radius: 30px;
+  transition: 0.8s;
 }
-.sidebar:hover {
-  width: 300px;
+/* boton de ingreso */
+.desliz-btn1{
+  
+  padding: 10px 22px;
+  cursor: pointer;
+  background: transparent;
+  border: 0px;
+  outline: none;
+  position: relative;
 }
-.sidebar .dots {
-  width: 60px;
+/* boton de registro */
+.desliz-btn2{
+  padding: 10px 22px;
+  cursor: pointer;
+  background: transparent;
+  border: 0px;
+  outline: none;
+  position: relative;
 }
-.sidebar .profile {
-  width: 55px;
-  height: 55px;
-  border-radius: 15px;
-  color: #fff;
-  background-color: var(--main-color);
-  display: grid;
-  place-items: center;
-  font-size: 25px;
-  margin: 30px 0;
+/* contiene los botones */
+.boton_formulario{
+  width: 240px;
+  margin: 30px auto;
+  /* margin: 20px auto 30px auto; */
+  position: relative;
 }
-.sidebar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.sidebar ul {
-  padding-bottom: 30px;
-  list-style: none;
-}
-.sidebar ul span {
-  color: black;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 13px;
+/* Estilo de boton y envio de formulario */
+.validar{
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
   display: block;
-  padding-bottom: 20px;
+  margin: auto;
+  background: linear-gradient(to right, rgb(66, 196, 152), rgb(92, 159, 226));
+  border: 0px;
+  outline: none;
+  border-radius: 30px;
 }
-
-.sidebar ul li {
-  display: flex; 
-  align-items: center; 
-  padding-left: 10px;
-  transition: var(--main-transition);
+/*tamaño frame en ingreso*/
+.tamano_Original{
+  height: 250px
 }
-
-.sidebar:hover ul li {
-  padding-left: 0px;
+/*tamaño frame en cambio a registro*/
+.tamano{
+  height: 447px
 }
-.sidebar ul li a {
-  padding: 10px;
-  display: flex; 
-  align-items: center; 
-  gap: 10px;
-  border-radius: 15px;
-  transition: 0.3s all ease-in-out;
-  font-size: 16px;
-  width: 300px;
-  color: black;
-  font-weight: 500;
-  text-decoration: none;
+.tamanoContenido{
+  height: 555px
 }
-.sidebar:hover a {
-  width: 100%;
+.linea{
+  border-bottom: 3px solid #318B48;
 }
-.sidebar ul li a:hover {
-  background-color: #ebf0fe;
-  color: var(--main-color);
-}
-.sidebar ul li a ion-icon {
-  font-size: 22px;
-}
-.sidebar ul li.noti a ion-icon {
-  position: relative;
-}
-.sidebar ul li.noti a ion-icon::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  background-color: #3761ee;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-.sidebar ul li.likes a ion-icon {
-  position: relative;
-}
-.sidebar ul li.likes a ion-icon::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  background-color: #e45447;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-.sidebar ul li a p {
-  visibility: hidden;
-  opacity: 0;
-  transition: var(--main-transition);
-}
-.sidebar:hover ul li a p {
-  visibility: visible;
-  opacity: 1;
-}
-.sidebar ul li.switch-theme {
-  position: relative;
-}
-.sidebar ul li.switch-theme button {
-  background-color: #ddd;
-  border: none;
-  border-radius: 50px;
-  height: 25px;
-  width: 50px;
-  padding: 5px;
-  position: absolute;
-  right: 30px;
-  visibility: hidden;
-  opacity: 0;
-  transition: var(--main-transition);
-}
-.sidebar:hover ul li.switch-theme button {
-  visibility: visible;
-  opacity: 1;
-}
-.sidebar ul li.switch-theme button .circle {
-  border-radius: 50%;
-  background-color: #fff;
-  height: 100%;
-  width: 15px;
-}
-
-.dots img {
-    border-radius: 60%;
-}
-.sidebar .profile {
-    display: flex; 
-    align-items: center; 
-    width: 60px;
-    margin-bottom: 20px; 
-  }
-  
-  .sidebar .profile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .sidebar .profile span {
-    margin-left: 30px; 
-    font-size: 16px; 
-    color: black; 
-  }
-
-  span {
-    margin: auto;
-    font-size: 2rem;
-  }
